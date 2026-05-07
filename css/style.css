@@ -104,7 +104,7 @@ nav.scrolled {
   font-size: 15px; font-weight: 600; letter-spacing: -0.2px;
   flex-shrink: 0;
 }
-.nav-logo img { height: 26px; }
+.nav-logo img { height: 44px; }
 .nav-links {
   display: flex; align-items: center; gap: 28px;
   list-style: none; flex: 1; justify-content: center;
@@ -252,16 +252,16 @@ nav.scrolled {
 .phone-wrap:hover { transform: translateY(-4px) !important; }
 
 .phone-frame {
-  background: #080808;
+  background: #c8c8cc;
   border-radius: 42px;
   padding: 10px;
-  box-shadow: var(--shadow-phone), 0 0 0 1px rgba(255,255,255,0.07);
+  box-shadow: var(--shadow-phone), 0 0 0 1px rgba(0,0,0,0.08);
 }
 .phone-frame.sm { width: 218px; }
 .phone-frame.lg { width: 248px; }
 
 .phone-screen-inner {
-  background: #0c1118;
+  background: #f5f5f7;
   border-radius: 34px;
   overflow: hidden;
   position: relative;
@@ -271,7 +271,7 @@ nav.scrolled {
 
 .p-island {
   width: 90px; height: 28px;
-  background: #000; border-radius: 14px;
+  background: #1a1a1a; border-radius: 14px;
   margin: 10px auto 0;
 }
 
@@ -280,12 +280,12 @@ nav.scrolled {
   padding: 8px 14px 10px;
   height: 100%;
   display: flex; flex-direction: column;
-  color: #fff;
+  color: #1a1a1a;
 }
 .ps-status {
   display: flex; justify-content: space-between;
   font-size: 10px; font-weight: 500;
-  color: rgba(255,255,255,0.6);
+  color: rgba(0,0,0,0.45);
   padding: 4px 0 10px;
 }
 .ps-header {
@@ -293,11 +293,11 @@ nav.scrolled {
   justify-content: space-between;
   margin-bottom: 14px;
 }
-.ps-title { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.2px; }
-.ps-sub   { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+.ps-title { font-size: 15px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.2px; }
+.ps-sub   { font-size: 10px; color: rgba(0,0,0,0.4); margin-top: 2px; }
 .ps-btn   {
   width: 28px; height: 28px; border-radius: 50%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.07);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
@@ -307,20 +307,20 @@ nav.scrolled {
 .ps-tabs {
   display: flex; justify-content: space-around;
   padding: 9px 0 4px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(0,0,0,0.07);
   margin-top: auto; flex-shrink: 0;
 }
 .ps-tab {
   display: flex; flex-direction: column;
   align-items: center; gap: 3px;
   font-size: 8px; font-weight: 500;
-  color: rgba(255,255,255,0.3);
+  color: rgba(0,0,0,0.28);
 }
 .ps-tab.active { color: #0090ff; }
 
 /* ── MAP SCREEN (Phone 1) ── */
 .pmap-area {
-  background: #111b2e;
+  background: #dde8f5;
   border-radius: 12px;
   height: 145px;
   margin-bottom: 12px;
@@ -330,11 +330,11 @@ nav.scrolled {
 .pmap-grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
   background-size: 18px 18px;
 }
-.pmap-road { position: absolute; background: rgba(255,255,255,0.07); }
+.pmap-road { position: absolute; background: rgba(255,255,255,0.75); }
 .pmap-road.h { height: 2px; width: 100%; top: 55%; }
 .pmap-road.v { width: 2px; height: 100%; left: 48%; }
 .pmap-road.h2 { height: 2px; width: 100%; top: 30%; }
@@ -360,54 +360,54 @@ nav.scrolled {
 }
 .pmap-tag {
   position: absolute; top: 10px; left: 10px;
-  background: rgba(10,10,20,0.72); backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.88); backdrop-filter: blur(6px);
   border-radius: 6px; padding: 3px 8px;
-  font-size: 9px; font-weight: 600; color: #fff;
+  font-size: 9px; font-weight: 600; color: #1a1a1a;
 }
 .pmap-active {
   position: absolute; top: 10px; right: 10px;
   background: rgba(0,202,72,0.18);
   border: 1px solid rgba(0,202,72,0.35);
   border-radius: 6px; padding: 3px 8px;
-  font-size: 9px; font-weight: 600; color: #00ca48;
+  font-size: 9px; font-weight: 600; color: #008a30;
 }
 
 .ploc-list { display: flex; flex-direction: column; gap: 6px; }
 .ploc-row {
   display: flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.04);
   border-radius: 10px; padding: 7px 9px;
 }
 .ploc-emoji { font-size: 14px; flex-shrink: 0; }
 .ploc-info { flex: 1; }
-.ploc-name { font-size: 11px; font-weight: 600; color: #fff; }
-.ploc-meta { font-size: 9.5px; color: rgba(255,255,255,0.38); margin-top: 1px; }
+.ploc-name { font-size: 11px; font-weight: 600; color: #1a1a1a; }
+.ploc-meta { font-size: 9.5px; color: rgba(0,0,0,0.4); margin-top: 1px; }
 .ploc-dot  { width: 7px; height: 7px; border-radius: 50%; background: #00ca48; box-shadow: 0 0 6px rgba(0,202,72,0.5); }
 
 /* ── CHECKLIST SCREEN (Phone 2) ── */
 .pcl-prog {
-  background: rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.04);
   border-radius: 10px;
   padding: 10px 12px;
   margin-bottom: 12px; flex-shrink: 0;
 }
 .pcl-prog-row {
   display: flex; justify-content: space-between;
-  font-size: 10px; color: rgba(255,255,255,0.45);
+  font-size: 10px; color: rgba(0,0,0,0.45);
   margin-bottom: 7px;
 }
-.pcl-prog-track { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+.pcl-prog-track { height: 4px; background: rgba(0,0,0,0.1); border-radius: 2px; overflow: hidden; }
 .pcl-prog-fill  { height: 100%; background: linear-gradient(90deg, #0090ff, #00ca48); border-radius: 2px; }
 
 .pcl-list { display: flex; flex-direction: column; gap: 6px; flex: 1; overflow: hidden; }
 .pcl-item {
   display: flex; align-items: center; gap: 9px;
   padding: 8px 10px; border-radius: 10px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.03);
 }
 .pcl-item.crit {
-  background: rgba(255,62,0,0.07);
-  border: 1px solid rgba(255,62,0,0.18);
+  background: rgba(255,62,0,0.06);
+  border: 1px solid rgba(255,62,0,0.15);
 }
 .pcl-box {
   width: 18px; height: 18px;
@@ -415,16 +415,16 @@ nav.scrolled {
   display: flex; align-items: center; justify-content: center;
 }
 .pcl-box.done { background: #00ca48; }
-.pcl-box.open { border: 1.5px solid rgba(255,255,255,0.18); }
+.pcl-box.open { border: 1.5px solid rgba(0,0,0,0.18); }
 .pcl-box.warn { border: 1.5px solid rgba(255,62,0,0.5); }
 
-.pcl-text { font-size: 12px; letter-spacing: -0.1px; flex: 1; color: rgba(255,255,255,0.78); }
-.pcl-text.done { text-decoration: line-through; color: rgba(255,255,255,0.28); }
-.pcl-text.crit { color: #ff6b4a; font-weight: 500; }
+.pcl-text { font-size: 12px; letter-spacing: -0.1px; flex: 1; color: rgba(0,0,0,0.75); }
+.pcl-text.done { text-decoration: line-through; color: rgba(0,0,0,0.28); }
+.pcl-text.crit { color: #d93800; font-weight: 500; }
 
 .pcl-tag {
   font-size: 8px; font-weight: 700; text-transform: uppercase;
-  background: rgba(255,62,0,0.14); color: #ff3e00;
+  background: rgba(255,62,0,0.12); color: #d93800;
   border-radius: 4px; padding: 2px 5px;
 }
 
@@ -434,59 +434,59 @@ nav.scrolled {
   font-size: 11px; font-weight: 600;
   display: flex; align-items: center; justify-content: center;
 }
-.pcl-act.snooze { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.65); }
+.pcl-act.snooze { background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.55); }
 .pcl-act.done   { background: #0090ff; color: #fff; }
 
 /* ── DASHBOARD SCREEN (Phone 3) ── */
 .pdash-head { margin-bottom: 12px; }
-.pdash-label { font-size: 10px; color: rgba(255,255,255,0.38); margin-bottom: 2px; }
-.pdash-name  { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: -0.25px; }
+.pdash-label { font-size: 10px; color: rgba(0,0,0,0.38); margin-bottom: 2px; }
+.pdash-name  { font-size: 16px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.25px; }
 
 .pdash-loc {
-  background: linear-gradient(135deg, rgba(0,144,255,0.14), rgba(0,202,72,0.08));
-  border: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(135deg, rgba(0,144,255,0.1), rgba(0,202,72,0.06));
+  border: 1px solid rgba(0,0,0,0.07);
   border-radius: 12px; padding: 12px;
   margin-bottom: 10px; flex-shrink: 0;
   display: flex; gap: 10px; align-items: flex-start;
 }
 .pdash-loc-icon {
   width: 34px; height: 34px;
-  background: rgba(0,144,255,0.18);
+  background: rgba(0,144,255,0.14);
   border-radius: 9px;
   display: flex; align-items: center; justify-content: center;
   font-size: 17px; flex-shrink: 0;
 }
-.pdash-loc-name { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 2px; }
-.pdash-loc-dist { font-size: 10px; color: rgba(255,255,255,0.42); }
+.pdash-loc-name { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px; }
+.pdash-loc-dist { font-size: 10px; color: rgba(0,0,0,0.42); }
 .pdash-loc-badge {
   margin-left: auto;
-  background: rgba(0,202,72,0.18);
-  color: #00ca48;
+  background: rgba(0,202,72,0.15);
+  color: #008a30;
   border-radius: 6px; font-size: 9px; font-weight: 600;
   padding: 3px 7px; align-self: flex-start; white-space: nowrap;
 }
 
 .pdash-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; flex-shrink: 0; }
 .pdash-stat {
-  background: rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.04);
   border-radius: 10px; padding: 10px;
 }
-.pdash-stat-val   { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.4px; margin-bottom: 2px; }
-.pdash-stat-label { font-size: 9.5px; color: rgba(255,255,255,0.38); }
+.pdash-stat-val   { font-size: 20px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.4px; margin-bottom: 2px; }
+.pdash-stat-label { font-size: 9.5px; color: rgba(0,0,0,0.38); }
 
 .pdash-section-label {
   font-size: 9.5px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.06em; color: rgba(255,255,255,0.38);
+  letter-spacing: 0.06em; color: rgba(0,0,0,0.38);
   margin-bottom: 7px;
 }
 .pdash-recent {
-  background: rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.04);
   border-radius: 10px; padding: 10px; flex-shrink: 0;
 }
-.pdash-rec-name { font-size: 11px; font-weight: 600; color: #fff; margin-bottom: 7px; }
-.pdash-bar-track { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; margin-bottom: 4px; }
+.pdash-rec-name { font-size: 11px; font-weight: 600; color: #1a1a1a; margin-bottom: 7px; }
+.pdash-bar-track { height: 3px; background: rgba(0,0,0,0.1); border-radius: 2px; overflow: hidden; margin-bottom: 4px; }
 .pdash-bar-fill  { height: 100%; background: #0090ff; border-radius: 2px; }
-.pdash-rec-pct   { font-size: 9px; color: rgba(255,255,255,0.38); }
+.pdash-rec-pct   { font-size: 9px; color: rgba(0,0,0,0.38); }
 
 /* Phone caption */
 .phone-caption { text-align: center; }
