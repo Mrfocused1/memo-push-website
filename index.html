@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Memo Push — Never Forget When You Leave</title>
-  <meta name="description" content="Memo Push is a geofence-powered checklist reminder app. When you leave a location, it reminds you of everything you need. Available on iOS & Android." />
+  <meta name="description" content="Memo Push fires a push notification the moment you leave a saved location, reminding you of everything on your checklist. iOS & Android." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
 </head>
 <body>
 
-<!-- ─── Nav ──────────────────────────────────── -->
+<!-- ── Nav ───────────────────────────────────── -->
 <nav>
   <div class="container nav-inner">
     <a href="/" class="nav-logo">
@@ -21,11 +21,12 @@
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
+      <li><a href="#phones">See It In Action</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="#contact" class="btn btn-primary">Get Early Access</a>
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-dark">Get Early Access</a>
     </div>
     <div class="burger" role="button" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -33,245 +34,485 @@
   </div>
 </nav>
 <div class="mobile-menu">
-  <a href="#features" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Features</a>
-  <a href="#how-it-works" onclick="document.querySelector('.mobile-menu').classList.remove('open')">How It Works</a>
-  <a href="#contact" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Contact</a>
-  <a href="#contact" class="btn btn-primary" style="margin-top:12px">Get Early Access</a>
+  <a href="#features"      onclick="this.closest('.mobile-menu').classList.remove('open')">Features</a>
+  <a href="#phones"        onclick="this.closest('.mobile-menu').classList.remove('open')">See It In Action</a>
+  <a href="#how-it-works"  onclick="this.closest('.mobile-menu').classList.remove('open')">How It Works</a>
+  <a href="#contact"       onclick="this.closest('.mobile-menu').classList.remove('open')">Contact</a>
+  <a href="#contact" class="btn btn-dark" style="margin-top:12px">Get Early Access</a>
 </div>
 
-<!-- ─── Hero ──────────────────────────────────── -->
+<!-- ── Hero ──────────────────────────────────── -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+
+  <!-- Illustrated blob characters -->
+  <div class="hero-chars" aria-hidden="true">
+
+    <!-- Blob 1 — Orange (top-left, arms up) -->
+    <svg class="blob-char blob-1" viewBox="-18 -8 136 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="14" y1="48" x2="-12" y2="24" stroke="#ff3e00" stroke-width="8" stroke-linecap="round"/>
+      <line x1="14" y1="48" x2="-12" y2="24" stroke="#c73000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="86" y1="48" x2="112" y2="24" stroke="#ff3e00" stroke-width="8" stroke-linecap="round"/>
+      <line x1="86" y1="48" x2="112" y2="24" stroke="#c73000" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 13C70 9 88 25 88 49C88 73 70 89 50 89C30 89 12 73 12 49C12 25 30 17 50 13Z" fill="#ff3e00"/>
+      <path d="M50 13C70 9 88 25 88 49C88 73 70 89 50 89C30 89 12 73 12 49C12 25 30 17 50 13Z" stroke="#c73000" stroke-width="2"/>
+      <line x1="38" y1="89" x2="32" y2="115" stroke="#ff3e00" stroke-width="8" stroke-linecap="round"/>
+      <line x1="38" y1="89" x2="32" y2="115" stroke="#c73000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="62" y1="89" x2="68" y2="115" stroke="#ff3e00" stroke-width="8" stroke-linecap="round"/>
+      <line x1="62" y1="89" x2="68" y2="115" stroke="#c73000" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="38" cy="47" r="5.5" fill="#121212"/>
+      <circle cx="62" cy="47" r="5.5" fill="#121212"/>
+      <circle cx="39.5" cy="45.5" r="1.8" fill="white"/>
+      <circle cx="63.5" cy="45.5" r="1.8" fill="white"/>
+      <path d="M37 61Q50 72 63 61" stroke="#121212" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+    <!-- Blob 2 — Meadow Green (top-right, waving) -->
+    <svg class="blob-char blob-2" viewBox="-18 -8 136 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="12" y1="52" x2="-14" y2="62" stroke="#00ca48" stroke-width="8" stroke-linecap="round"/>
+      <line x1="12" y1="52" x2="-14" y2="62" stroke="#008a30" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="86" y1="50" x2="114" y2="22" stroke="#00ca48" stroke-width="8" stroke-linecap="round"/>
+      <line x1="86" y1="50" x2="114" y2="22" stroke="#008a30" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 15C72 11 88 29 86 53C84 77 66 91 46 89C28 87 10 71 12 49C14 27 30 19 50 15Z" fill="#00ca48"/>
+      <path d="M50 15C72 11 88 29 86 53C84 77 66 91 46 89C28 87 10 71 12 49C14 27 30 19 50 15Z" stroke="#008a30" stroke-width="2"/>
+      <line x1="34" y1="88" x2="28" y2="114" stroke="#00ca48" stroke-width="8" stroke-linecap="round"/>
+      <line x1="34" y1="88" x2="28" y2="114" stroke="#008a30" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="58" y1="88" x2="64" y2="114" stroke="#00ca48" stroke-width="8" stroke-linecap="round"/>
+      <line x1="58" y1="88" x2="64" y2="114" stroke="#008a30" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="37" cy="48" r="5.5" fill="#121212"/>
+      <circle cx="59" cy="48" r="5.5" fill="#121212"/>
+      <circle cx="38.5" cy="46.5" r="1.8" fill="white"/>
+      <circle cx="60.5" cy="46.5" r="1.8" fill="white"/>
+      <path d="M36 62Q48 73 60 62" stroke="#121212" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+    <!-- Blob 3 — Sky Blue (left-middle, relaxed) -->
+    <svg class="blob-char blob-3" viewBox="-18 -8 136 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="14" y1="50" x2="-14" y2="58" stroke="#0090ff" stroke-width="8" stroke-linecap="round"/>
+      <line x1="14" y1="50" x2="-14" y2="58" stroke="#0060cc" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="88" y1="50" x2="116" y2="58" stroke="#0090ff" stroke-width="8" stroke-linecap="round"/>
+      <line x1="88" y1="50" x2="116" y2="58" stroke="#0060cc" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M52 12C72 8 90 26 88 50C86 74 68 92 48 90C28 88 10 72 12 48C14 26 32 16 52 12Z" fill="#0090ff"/>
+      <path d="M52 12C72 8 90 26 88 50C86 74 68 92 48 90C28 88 10 72 12 48C14 26 32 16 52 12Z" stroke="#0060cc" stroke-width="2"/>
+      <line x1="36" y1="90" x2="30" y2="116" stroke="#0090ff" stroke-width="8" stroke-linecap="round"/>
+      <line x1="36" y1="90" x2="30" y2="116" stroke="#0060cc" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="90" x2="66" y2="116" stroke="#0090ff" stroke-width="8" stroke-linecap="round"/>
+      <line x1="60" y1="90" x2="66" y2="116" stroke="#0060cc" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="38" cy="47" r="5.5" fill="#121212"/>
+      <circle cx="62" cy="47" r="5.5" fill="#121212"/>
+      <circle cx="39.5" cy="45.5" r="1.8" fill="white"/>
+      <circle cx="63.5" cy="45.5" r="1.8" fill="white"/>
+      <path d="M37 61Q50 70 63 61" stroke="#121212" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+    <!-- Blob 4 — Sunburst Yellow (right-middle, holding star) -->
+    <svg class="blob-char blob-4" viewBox="-18 -8 136 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="12" y1="52" x2="-14" y2="64" stroke="#ffbb26" stroke-width="8" stroke-linecap="round"/>
+      <line x1="12" y1="52" x2="-14" y2="64" stroke="#c98f00" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="88" y1="50" x2="114" y2="26" stroke="#ffbb26" stroke-width="8" stroke-linecap="round"/>
+      <line x1="88" y1="50" x2="114" y2="26" stroke="#c98f00" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Star held at tip of right arm -->
+      <circle cx="117" cy="22" r="11" fill="#ffbb26" stroke="#c98f00" stroke-width="2"/>
+      <text x="117" y="27" text-anchor="middle" font-size="12">⭐</text>
+      <path d="M50 16C70 12 88 30 88 52C88 74 70 90 50 90C30 90 12 74 12 52C12 30 30 20 50 16Z" fill="#ffbb26"/>
+      <path d="M50 16C70 12 88 30 88 52C88 74 70 90 50 90C30 90 12 74 12 52C12 30 30 20 50 16Z" stroke="#c98f00" stroke-width="2"/>
+      <line x1="36" y1="90" x2="30" y2="116" stroke="#ffbb26" stroke-width="8" stroke-linecap="round"/>
+      <line x1="36" y1="90" x2="30" y2="116" stroke="#c98f00" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="64" y1="90" x2="70" y2="116" stroke="#ffbb26" stroke-width="8" stroke-linecap="round"/>
+      <line x1="64" y1="90" x2="70" y2="116" stroke="#c98f00" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="38" cy="50" r="5.5" fill="#121212"/>
+      <circle cx="62" cy="50" r="5.5" fill="#121212"/>
+      <circle cx="39.5" cy="48.5" r="1.8" fill="rgba(255,255,255,0.7)"/>
+      <circle cx="63.5" cy="48.5" r="1.8" fill="rgba(255,255,255,0.7)"/>
+      <path d="M37 64Q50 74 63 64" stroke="#c98f00" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+    <!-- Blob 5 — Flamingo Pink (bottom-left, small) -->
+    <svg class="blob-char blob-5" viewBox="-16 -6 130 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="18" y1="50" x2="-10" y2="42" stroke="#ff58ae" stroke-width="7" stroke-linecap="round"/>
+      <line x1="18" y1="50" x2="-10" y2="42" stroke="#cc2a7e" stroke-width="2" stroke-linecap="round"/>
+      <line x1="82" y1="50" x2="110" y2="42" stroke="#ff58ae" stroke-width="7" stroke-linecap="round"/>
+      <line x1="82" y1="50" x2="110" y2="42" stroke="#cc2a7e" stroke-width="2" stroke-linecap="round"/>
+      <path d="M50 18C66 14 82 28 82 50C82 72 66 84 50 84C34 84 18 72 18 50C18 28 34 22 50 18Z" fill="#ff58ae"/>
+      <path d="M50 18C66 14 82 28 82 50C82 72 66 84 50 84C34 84 18 72 18 50C18 28 34 22 50 18Z" stroke="#cc2a7e" stroke-width="2"/>
+      <line x1="36" y1="84" x2="30" y2="108" stroke="#ff58ae" stroke-width="7" stroke-linecap="round"/>
+      <line x1="36" y1="84" x2="30" y2="108" stroke="#cc2a7e" stroke-width="2" stroke-linecap="round"/>
+      <line x1="64" y1="84" x2="70" y2="108" stroke="#ff58ae" stroke-width="7" stroke-linecap="round"/>
+      <line x1="64" y1="84" x2="70" y2="108" stroke="#cc2a7e" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="39" cy="48" r="5" fill="#121212"/>
+      <circle cx="61" cy="48" r="5" fill="#121212"/>
+      <circle cx="40.5" cy="46.5" r="1.5" fill="white"/>
+      <circle cx="62.5" cy="46.5" r="1.5" fill="white"/>
+      <path d="M38 61Q50 70 62 61" stroke="#121212" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+    <!-- Blob 6 — Teal/Spearmint (bottom-right) -->
+    <svg class="blob-char blob-6" viewBox="-16 -6 130 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="16" y1="52" x2="-12" y2="44" stroke="#00c978" stroke-width="7" stroke-linecap="round"/>
+      <line x1="16" y1="52" x2="-12" y2="44" stroke="#008a52" stroke-width="2" stroke-linecap="round"/>
+      <line x1="84" y1="52" x2="112" y2="36" stroke="#00c978" stroke-width="7" stroke-linecap="round"/>
+      <line x1="84" y1="52" x2="112" y2="36" stroke="#008a52" stroke-width="2" stroke-linecap="round"/>
+      <path d="M52 16C70 12 86 28 84 52C82 74 64 88 46 86C28 84 14 70 14 50C14 28 32 20 52 16Z" fill="#00c978"/>
+      <path d="M52 16C70 12 86 28 84 52C82 74 64 88 46 86C28 84 14 70 14 50C14 28 32 20 52 16Z" stroke="#008a52" stroke-width="2"/>
+      <line x1="34" y1="86" x2="28" y2="110" stroke="#00c978" stroke-width="7" stroke-linecap="round"/>
+      <line x1="34" y1="86" x2="28" y2="110" stroke="#008a52" stroke-width="2" stroke-linecap="round"/>
+      <line x1="60" y1="86" x2="66" y2="110" stroke="#00c978" stroke-width="7" stroke-linecap="round"/>
+      <line x1="60" y1="86" x2="66" y2="110" stroke="#008a52" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="38" cy="49" r="5" fill="#121212"/>
+      <circle cx="60" cy="49" r="5" fill="#121212"/>
+      <circle cx="39.5" cy="47.5" r="1.5" fill="white"/>
+      <circle cx="61.5" cy="47.5" r="1.5" fill="white"/>
+      <path d="M37 62Q49 71 61 62" stroke="#121212" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+  </div><!-- /hero-chars -->
+
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Coming Soon — iOS &amp; Android
-        </div>
-        <h1 class="hero-title">
-          Never forget<br />
-          <span class="gradient-text">when you leave.</span>
-        </h1>
-        <p class="hero-desc">
-          Memo Push fires a smart push notification the moment you step outside a saved location — reminding you of every item on your checklist before it's too late.
-        </p>
-        <div class="hero-cta">
-          <a href="#" class="store-btn" aria-label="App Store">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.16 1.26-2.14 3.75.03 2.99 2.63 3.99 2.66 4l-.07.27ZM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z" fill="currentColor"/></svg>
-            <div class="store-label">
-              <small>Download on the</small>
-              <strong>App Store</strong>
-            </div>
-          </a>
-          <a href="#" class="store-btn" aria-label="Google Play">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="m3.609 1.814 10.086 10.086L3.61 22l-.001-.001A2 2 0 0 1 3 20.817V3.183a2 2 0 0 1 .609-1.369ZM5.865 3l7.71 7.71-2.342 2.342L5.866 7.295 5.865 3Zm0 18 5.367-5.367 2.342 2.343-7.71 7.71.001-.686ZM21 12c0 .711-.39 1.333-.966 1.671l-3.626 2.088-2.462-2.463L16.5 10.75l3.537 2.037A1.99 1.99 0 0 1 21 12Z" fill="currentColor"/></svg>
-            <div class="store-label">
-              <small>Get it on</small>
-              <strong>Google Play</strong>
-            </div>
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><strong>20+</strong><span>Geofences</span></div>
-          <div class="hero-stat"><strong>100%</strong><span>On-device</span></div>
-          <div class="hero-stat"><strong>iOS &amp; Android</strong><span>Cross-platform</span></div>
-        </div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Coming Soon — iOS &amp; Android
       </div>
-
-      <!-- Phone mockup -->
-      <div class="hero-visual">
-        <div class="phone-mockup">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-topbar">
-              <span class="phone-topbar-text">9:41</span>
-              <span class="phone-topbar-text">●●●</span>
-            </div>
-            <div class="phone-title">📍 Home — 3 unchecked</div>
-            <div class="phone-map">
-              <div class="map-grid"></div>
-              <div class="map-pin">
-                <div class="map-pin-dot"></div>
-                <div class="map-pin-pulse"></div>
-              </div>
-            </div>
-            <div class="phone-checklist">
-              <div class="phone-check-item">
-                <div class="check-box done">
-                  <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <span class="check-text done">House keys</span>
-              </div>
-              <div class="phone-check-item">
-                <div class="check-box todo"></div>
-                <span class="check-text">Wallet</span>
-              </div>
-              <div class="phone-check-item">
-                <div class="check-box todo"></div>
-                <span class="check-text" style="color:#f87171">Phone charger ⚠</span>
-              </div>
-              <div class="phone-check-item">
-                <div class="check-box done">
-                  <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <span class="check-text done">AirPods</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floating notification card -->
-        <div class="float-card float-card-1">
-          <div class="float-notif">
-            <div class="float-notif-icon">
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Z" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="9" r="2.5" stroke="#fff" stroke-width="2"/></svg>
-            </div>
-            <div class="float-notif-text">
-              <strong>Leaving Home</strong>
-              <span>3 items remaining!</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floating stat card -->
-        <div class="float-card float-card-2">
-          <div class="float-stat">
-            <strong>98%</strong>
-            <span>on-time rate</span>
-          </div>
-        </div>
+      <h1 class="hero-title">
+        Never forget<br/>when you leave.
+      </h1>
+      <p class="hero-sub">
+        Memo Push fires a smart push notification the moment you step outside a saved location — reminding you of everything on your checklist before it's too late.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-dark">Get Early Access</a>
+        <a href="#phones"  class="btn btn-light">See it in action ↓</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── Features ──────────────────────────────── -->
-<section id="features">
+<!-- ── Features ───────────────────────────────── -->
+<section id="features" class="section">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-label">Features</span>
-      <h2>Everything you need,<br />right when you need it</h2>
-      <p>Memo Push combines geofencing technology with smart checklists so you're always prepared when it matters most.</p>
+      <span class="ember-label">Features</span>
+      <h2 class="section-heading">Everything you need,<br/>right when you need it</h2>
+      <p class="section-sub">Smart geofencing meets effortless checklists so you're always prepared the moment it counts.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Z" stroke="#5d99f6" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="9" r="2.5" stroke="#5d99f6" stroke-width="2"/></svg>
+        <div class="feat-icon orange">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Z" stroke="#ff3e00" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="9" r="2.5" stroke="#ff3e00" stroke-width="2"/></svg>
         </div>
         <h3>Smart Geofences</h3>
-        <p>Draw a boundary around any location — home, office, gym. The moment your phone crosses that boundary, Memo Push springs into action. Supports up to 20 geofences.</p>
+        <p>Draw a boundary around any location — home, office, gym. The instant your phone crosses it, Memo Push springs into action. Up to 20 locations.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7Z" stroke="#0d9488" stroke-width="2"/></svg>
+        <div class="feat-icon green">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" stroke="#00ca48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7Z" stroke="#00ca48" stroke-width="2"/></svg>
         </div>
         <h3>Linked Checklists</h3>
-        <p>Create custom checklists for each location. Prioritize critical items, drag to reorder, and link one list to multiple locations. Never leave without what matters.</p>
+        <p>Create custom lists for each location. Mark critical items, drag to reorder, and link one list to multiple places. Never leave without what matters.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="#5d99f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="#5d99f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="feat-icon blue">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="#0090ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="#0090ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Instant Push Alerts</h3>
-        <p>Get a push notification the instant you leave, listing everything you haven't checked off. Critical items are highlighted so you never miss what's most important.</p>
+        <p>Get a notification the instant you leave, listing every unchecked item. Critical items are highlighted so you never miss what's most important.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#32ad2b" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="#32ad2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="feat-icon yellow">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#ffbb26" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="#ffbb26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Snooze &amp; Reschedule</h3>
-        <p>Not ready yet? Snooze your reminder for 5, 15, 30 minutes or an hour. Your session is preserved — checked items stay checked when the reminder fires again.</p>
+        <p>Not ready? Snooze 5, 15, 30 min or an hour. Your session is preserved — checked items stay checked when the reminder fires again.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3" stroke="#5d99f6" stroke-width="2"/><path d="M9 7h6M9 11h6M9 15h4" stroke="#5d99f6" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="feat-icon pink">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3" stroke="#ff58ae" stroke-width="2"/><path d="M9 7h6M9 11h6M9 15h4" stroke="#ff58ae" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
         <h3>Completion History</h3>
-        <p>Track how often you've left with everything on your list. Spot patterns, improve habits, and stay accountable with your full session history.</p>
+        <p>Track how often you've left fully prepared. Spot patterns, improve habits, stay accountable with your full session history.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="feat-icon violet">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="#9f4fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Private by Design</h3>
-        <p>All reminders fire on-device — no server needed. Your checklists and location data stay on your phone. No cloud processing required for notifications.</p>
+        <p>All reminders fire on-device. Your location data stays on your phone — no cloud processing required for notifications.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── How It Works ──────────────────────────── -->
-<section id="how-it-works">
+<!-- ── Phone Showcase ─────────────────────────── -->
+<section id="phones" class="section">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-label">How It Works</span>
-      <h2>Set it once.<br />Never forget again.</h2>
-      <p>Getting started takes less than two minutes. After that, Memo Push runs silently in the background until you need it.</p>
+      <span class="ember-label">See It In Action</span>
+      <h2 class="section-heading">Meet your memory.</h2>
+      <p class="section-sub">Three moments — one app. Watch Memo Push keep you prepared from map to checklist to the door.</p>
     </div>
-    <div class="steps-container">
-      <div class="step">
+    <div class="phones-row">
+
+      <!-- Phone 1: Map / Geofences -->
+      <div class="phone-wrap tilt-left fade-up">
+        <div class="phone-frame sm">
+          <div class="phone-screen-inner">
+            <div class="p-island"></div>
+            <div class="ps">
+              <div class="ps-status"><span>9:41</span><span>●●● ▌</span></div>
+              <div class="ps-header">
+                <div><div class="ps-title">My Places</div><div class="ps-sub">3 active geofences</div></div>
+                <div class="ps-btn"><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+              </div>
+              <div class="ps-content">
+                <!-- Mini map -->
+                <div class="pmap-area">
+                  <div class="pmap-grid"></div>
+                  <div class="pmap-road h"></div>
+                  <div class="pmap-road v"></div>
+                  <div class="pmap-road h2"></div>
+                  <div class="pmap-road v2"></div>
+                  <div class="pmap-circle">
+                    <div class="pmap-ring"></div>
+                    <div class="pmap-dot"></div>
+                  </div>
+                  <div class="pmap-tag">📍 Home</div>
+                  <div class="pmap-active">● Active</div>
+                </div>
+                <!-- Location list -->
+                <div class="ploc-list">
+                  <div class="ploc-row">
+                    <span class="ploc-emoji">🏠</span>
+                    <div class="ploc-info">
+                      <div class="ploc-name">Home</div>
+                      <div class="ploc-meta">2 lists · 250m radius</div>
+                    </div>
+                    <div class="ploc-dot"></div>
+                  </div>
+                  <div class="ploc-row">
+                    <span class="ploc-emoji">🏢</span>
+                    <div class="ploc-info">
+                      <div class="ploc-name">Office</div>
+                      <div class="ploc-meta">1 list · 100m radius</div>
+                    </div>
+                    <div class="ploc-dot"></div>
+                  </div>
+                  <div class="ploc-row">
+                    <span class="ploc-emoji">🏋️</span>
+                    <div class="ploc-info">
+                      <div class="ploc-name">Gym</div>
+                      <div class="ploc-meta">1 list · 150m radius</div>
+                    </div>
+                    <div class="ploc-dot" style="background:#ffbb26;box-shadow:0 0 6px rgba(255,187,38,.5)"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ps-tabs">
+                <div class="ps-tab active"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="2"/></svg><span>Places</span></div>
+                <div class="ps-tab"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M5 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lists</span></div>
+                <div class="ps-tab"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Profile</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-cap-label">Geofences</div>
+          <div class="phone-cap-text">Set your locations once</div>
+        </div>
+      </div>
+
+      <!-- Phone 2: Checklist (centre, largest) -->
+      <div class="phone-wrap fade-up">
+        <div class="phone-frame lg">
+          <div class="phone-screen-inner">
+            <div class="p-island"></div>
+            <div class="ps">
+              <div class="ps-status"><span>9:41</span><span>●●● ▌</span></div>
+              <div class="ps-header">
+                <div>
+                  <div class="ps-title" style="display:flex;align-items:center;gap:6px">
+                    <svg width="13" height="13" fill="none" viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Leaving Home
+                  </div>
+                  <div class="ps-sub">🔔 Triggered 2 min ago</div>
+                </div>
+                <div class="ps-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" fill="white"/><circle cx="12" cy="12" r="1.5" fill="white"/><circle cx="12" cy="19" r="1.5" fill="white"/></svg></div>
+              </div>
+              <div class="ps-content">
+                <!-- Progress -->
+                <div class="pcl-prog">
+                  <div class="pcl-prog-row"><span>Progress</span><span>2 of 5 done</span></div>
+                  <div class="pcl-prog-track"><div class="pcl-prog-fill" style="width:40%"></div></div>
+                </div>
+                <!-- Items -->
+                <div class="pcl-list">
+                  <div class="pcl-item">
+                    <div class="pcl-box done"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <span class="pcl-text done">House keys</span>
+                  </div>
+                  <div class="pcl-item">
+                    <div class="pcl-box done"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <span class="pcl-text done">Laptop bag</span>
+                  </div>
+                  <div class="pcl-item crit">
+                    <div class="pcl-box warn"></div>
+                    <span class="pcl-text crit">Phone charger</span>
+                    <span class="pcl-tag">Critical</span>
+                  </div>
+                  <div class="pcl-item">
+                    <div class="pcl-box open"></div>
+                    <span class="pcl-text">Wallet</span>
+                  </div>
+                  <div class="pcl-item">
+                    <div class="pcl-box open"></div>
+                    <span class="pcl-text">AirPods case</span>
+                  </div>
+                </div>
+                <div class="pcl-actions">
+                  <div class="pcl-act snooze">Snooze 15m</div>
+                  <div class="pcl-act done">All done ✓</div>
+                </div>
+              </div>
+              <div class="ps-tabs">
+                <div class="ps-tab"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="2"/></svg><span>Places</span></div>
+                <div class="ps-tab active"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M5 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lists</span></div>
+                <div class="ps-tab"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Profile</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-cap-label">Checklists</div>
+          <div class="phone-cap-text">Check off as you go</div>
+        </div>
+      </div>
+
+      <!-- Phone 3: Dashboard -->
+      <div class="phone-wrap tilt-right fade-up">
+        <div class="phone-frame sm">
+          <div class="phone-screen-inner">
+            <div class="p-island"></div>
+            <div class="ps">
+              <div class="ps-status"><span>9:41</span><span>●●● ▌</span></div>
+              <div class="ps-header">
+                <div>
+                  <div class="ps-title">Good morning</div>
+                  <div class="ps-sub">Thursday, 7 May</div>
+                </div>
+                <div class="ps-btn"><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+              <div class="ps-content">
+                <!-- Nearest location -->
+                <div class="pdash-loc">
+                  <div class="pdash-loc-icon">📍</div>
+                  <div>
+                    <div class="pdash-loc-name">Home</div>
+                    <div class="pdash-loc-dist">0.2 km · inside zone</div>
+                  </div>
+                  <div class="pdash-loc-badge">Active</div>
+                </div>
+                <!-- Stats -->
+                <div class="pdash-stats">
+                  <div class="pdash-stat">
+                    <div class="pdash-stat-val">3</div>
+                    <div class="pdash-stat-label">Geofences</div>
+                  </div>
+                  <div class="pdash-stat">
+                    <div class="pdash-stat-val">5</div>
+                    <div class="pdash-stat-label">Checklists</div>
+                  </div>
+                </div>
+                <!-- Recent -->
+                <div class="pdash-section-label">Recent activity</div>
+                <div class="pdash-recent">
+                  <div class="pdash-rec-name">Work Bag</div>
+                  <div class="pdash-bar-track"><div class="pdash-bar-fill" style="width:80%"></div></div>
+                  <div class="pdash-rec-pct">4 of 5 items · 80%</div>
+                </div>
+                <div class="pdash-recent" style="margin-top:6px">
+                  <div class="pdash-rec-name">Office Essentials</div>
+                  <div class="pdash-bar-track"><div class="pdash-bar-fill" style="width:100%;background:#00ca48"></div></div>
+                  <div class="pdash-rec-pct">All done ✓ · 100%</div>
+                </div>
+              </div>
+              <div class="ps-tabs">
+                <div class="ps-tab active"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Home</span></div>
+                <div class="ps-tab"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Places</span></div>
+                <div class="ps-tab"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Profile</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-cap-label">Dashboard</div>
+          <div class="phone-cap-text">Stay on top of everything</div>
+        </div>
+      </div>
+
+    </div><!-- /phones-row -->
+  </div>
+</section>
+
+<!-- ── How It Works ───────────────────────────── -->
+<section id="how-it-works" class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="ember-label">How It Works</span>
+      <h2 class="section-heading">Set it once.<br/>Never forget again.</h2>
+      <p class="section-sub">Getting started takes under two minutes. After that, Memo Push runs silently until you need it.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
         <div class="step-num">1</div>
-        <div class="step-content">
-          <h3>Create a geofence</h3>
-          <p>Search for your address or drop a pin on the map. Drag to set the boundary radius (50 m–2 km). Name it "Home", "Office", or anything you like.</p>
-        </div>
+        <h3>Create a geofence</h3>
+        <p>Search your address, drop a pin, and drag the boundary to set the radius (50 m–2 km). Name it anything.</p>
       </div>
-      <div class="step">
+      <div class="step-card">
         <div class="step-num">2</div>
-        <div class="step-content">
-          <h3>Build your checklist</h3>
-          <p>Add items you always need when leaving this location — keys, charger, medication, lunch. Mark critical items so they stand out in the notification.</p>
-        </div>
+        <h3>Build your checklist</h3>
+        <p>Add items you always need when leaving. Mark critical ones so they stand out in your notification.</p>
       </div>
-      <div class="step">
+      <div class="step-card">
         <div class="step-num">3</div>
-        <div class="step-content">
-          <h3>Link checklist to location</h3>
-          <p>Connect your checklist to the geofence. One checklist can cover multiple locations, or each location can have its own unique list.</p>
-        </div>
+        <h3>Link list to location</h3>
+        <p>Connect your checklist to the geofence. One list can cover multiple locations.</p>
       </div>
-      <div class="step">
+      <div class="step-card">
         <div class="step-num">4</div>
-        <div class="step-content">
-          <h3>Walk out — get reminded</h3>
-          <p>The moment you cross the geofence boundary, a notification lists everything unchecked. Tap to open the list, check items, and go — all in seconds.</p>
-        </div>
+        <h3>Walk out — get reminded</h3>
+        <p>The moment you cross the boundary, a notification lists everything unchecked. Tap, check, go.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── CTA ───────────────────────────────────── -->
-<section id="cta">
+<!-- ── CTA ────────────────────────────────────── -->
+<section id="cta" class="section">
   <div class="container">
     <div class="cta-card fade-up">
-      <span class="section-label">Early Access</span>
-      <h2>Be the first to <span class="gradient-text">stop forgetting.</span></h2>
-      <p>Memo Push is launching soon on iOS and Android. Join the waitlist and get notified the moment it's available.</p>
+      <span class="ember-label">Early Access</span>
+      <h2 class="cta-title">Be the first to stop forgetting.</h2>
+      <p class="cta-sub">Memo Push is launching soon on iOS and Android. Drop us your email and we'll let you know the moment it's live.</p>
       <div class="cta-btns">
-        <a href="#contact" class="btn btn-primary">
-          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22l-4-9-9-4 20-7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="#contact" class="btn btn-dark">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Get Early Access
         </a>
-        <a href="#features" class="btn btn-secondary">Learn More</a>
+        <a href="#features" class="btn btn-light">Explore Features</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── Contact ───────────────────────────────── -->
-<section id="contact">
+<!-- ── Contact ────────────────────────────────── -->
+<section id="contact" class="section">
   <div class="container">
     <div class="contact-grid">
-      <div class="contact-info fade-up">
-        <span class="section-label">Contact</span>
-        <h2>Get in touch</h2>
-        <p>Have a question, feature request, or want to join the beta? We'd love to hear from you.</p>
+      <div class="fade-up">
+        <span class="ember-label">Contact</span>
+        <h2 class="contact-title">Get in touch</h2>
+        <p class="contact-sub">Questions, feature requests, or want to join the beta? We'd love to hear from you.</p>
         <div class="contact-detail">
           <div class="contact-detail-icon">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z" stroke="#5d99f6" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="#5d99f6" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z" stroke="#474645" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="#474645" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <div>
             <strong>Email</strong>
@@ -280,40 +521,33 @@
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Z" stroke="#0d9488" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="9" r="2.5" stroke="#0d9488" stroke-width="2"/></svg>
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#474645" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="#474645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div>
-            <strong>Location</strong>
-            <span>Available worldwide — iOS &amp; Android</span>
+            <strong>Response time</strong>
+            <span>Within 24 hours</span>
           </div>
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#32ad2b" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="#32ad2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Z" stroke="#474645" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="9" r="2.5" stroke="#474645" stroke-width="2"/></svg>
           </div>
           <div>
-            <strong>Response time</strong>
-            <span>We reply within 24 hours</span>
+            <strong>Platform</strong>
+            <span>iOS &amp; Android, worldwide</span>
           </div>
         </div>
       </div>
-
-      <div class="contact-form-card fade-up">
+      <div class="form-card fade-up">
         <form id="contact-form" novalidate>
           <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required />
-            </div>
+            <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Your name" required /></div>
+            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@example.com" required /></div>
           </div>
           <div class="form-group">
-            <label for="subject">Subject</label>
+            <label for="subject">Topic</label>
             <select id="subject" name="subject" required>
-              <option value="" disabled selected>Select a topic…</option>
+              <option value="" disabled selected>Choose a topic…</option>
               <option value="early-access">Early Access / Beta</option>
               <option value="feature-request">Feature Request</option>
               <option value="support">Support</option>
@@ -321,24 +555,19 @@
               <option value="other">Other</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit">
-            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22l-4-9-9-4 20-7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="What's on your mind…" required></textarea></div>
+          <button type="submit" class="btn btn-dark form-submit">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Send Message
           </button>
-          <p class="form-success">
-            ✓ Message sent! We'll get back to you within 24 hours.
-          </p>
+          <p class="form-success">✓ Message sent! We'll reply within 24 hours.</p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── Footer ────────────────────────────────── -->
+<!-- ── Footer ─────────────────────────────────── -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -350,6 +579,7 @@
         <h4>Product</h4>
         <ul>
           <li><a href="#features">Features</a></li>
+          <li><a href="#phones">See It In Action</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#contact">Early Access</a></li>
         </ul>
@@ -357,7 +587,7 @@
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="/privacy">Privacy Policy</a></li>
           <li><a href="/terms">Terms &amp; Conditions</a></li>
         </ul>

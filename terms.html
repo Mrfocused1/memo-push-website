@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
 </head>
@@ -23,8 +24,8 @@
       <li><a href="/#how-it-works">How It Works</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="/#contact" class="btn btn-primary">Get Early Access</a>
+    <div class="nav-actions">
+      <a href="/#contact" class="btn btn-dark">Get Early Access</a>
     </div>
     <div class="burger" role="button" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -32,9 +33,10 @@
   </div>
 </nav>
 <div class="mobile-menu">
-  <a href="/#features">Features</a>
-  <a href="/#how-it-works">How It Works</a>
-  <a href="/#contact">Contact</a>
+  <a href="/#features"     onclick="this.closest('.mobile-menu').classList.remove('open')">Features</a>
+  <a href="/#how-it-works" onclick="this.closest('.mobile-menu').classList.remove('open')">How It Works</a>
+  <a href="/#contact"      onclick="this.closest('.mobile-menu').classList.remove('open')">Contact</a>
+  <a href="/#contact" class="btn btn-dark" style="margin-top:12px">Get Early Access</a>
 </div>
 
 <div class="legal-hero">
@@ -191,7 +193,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="images/logo.svg" alt="Memo Push" />
-        <p>Geofence-powered reminders that fire the moment you leave.</p>
+        <p>Geofence-powered reminders that fire the moment you leave. Never forget the important things again.</p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
@@ -204,7 +206,7 @@
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="/#contact">Contact Us</a></li>
+          <li><a href="/#contact">Contact</a></li>
           <li><a href="/privacy">Privacy Policy</a></li>
           <li><a href="/terms">Terms &amp; Conditions</a></li>
         </ul>
