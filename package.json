@@ -1,0 +1,9 @@
+{
+  "name": "memo-push-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for the Memo Push app",
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}
